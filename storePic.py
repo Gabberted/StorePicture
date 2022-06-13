@@ -6,6 +6,7 @@ import dbConn as db
 import urllib.request
 
 def QueryURL(url):
+    strCount="1"
     try:
         page = urllib.request.urlopen(url)
         btext=page.read()
