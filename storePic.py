@@ -8,8 +8,11 @@ import urllib.request
 def QueryURL(url,strCount="1"):    
     try:
         print(f"Probing url:{url}")
-        page = urllib.request.urlopen(url)
+        #page = urllib.request.urlopen(url)
+        page = urllib.urlretrieve(url)
+        print("Page retrieved")
         btext=page.read()
+        print("Page read")
         print(btext)
     except Exception as ex:
         print(f"Error: {ex}")
