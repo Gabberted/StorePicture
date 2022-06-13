@@ -8,6 +8,7 @@ import urllib.request
 def QueryURL(url):
     strCount="1"
     try:
+        print(f"Probing url:{url}")
         page = urllib.request.urlopen(url)
         btext=page.read()
         print(btext)
@@ -27,7 +28,7 @@ else:
     strCount=str(int(strCount)+1)
 
 url="https://http.cat/" + str(strCount)
-print(f"Probing url:{url}")
+
 QueryURL(url)
 
 
