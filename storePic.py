@@ -10,7 +10,7 @@ strCount=db.returnFetchall(strQ)[0]
 
 if strCount=="0":
     strCount=1
-else
+else:
     strCount=str(int(strCount)+1)
 
 page = urllib.request.urlopen('http.cat/' + strCount)
