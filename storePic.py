@@ -4,12 +4,14 @@ sys.path.append("/home/rakaut/containers/webbuilder/modules")
 import dbConn as db
 
 import urllib.request
+import requests 
 
 def QueryURL(url,strCount="1"):    
     try:
         print(f"Probing url:{url}")
         #page = urllib.request.urlopen(url)
-        page = urllib.request.urlretrieve(url, strCount)
+        page = urllib.request.urlretrieve(url, "images/" + strCount)
+        #page = requests.get(url, stream = True)
         print("Page retrieved")
         btext=page.read()
         print("Page read")
