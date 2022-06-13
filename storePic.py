@@ -13,6 +13,6 @@ if strCount=="0":
 else:
     strCount=str(int(strCount)+1)
 
-page = urllib.request.urlopen('http.cat/' + strCount)
+page = urllib.request.urlopen('http.cat/' + str(strCount))
 btext=page.read()
 print(btext)
