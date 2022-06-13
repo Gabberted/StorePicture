@@ -13,6 +13,8 @@ if strCount=="0":
 else:
     strCount=str(int(strCount)+1)
 
-page = urllib.request.urlopen('https://http.cat/' + str(strCount))
+url="https://http.cat/" + str(strCount)
+print(f"Probing url:{url}")
+page = urllib.request.urlopen(url)
 btext=page.read()
 print(btext)
