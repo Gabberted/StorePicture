@@ -7,7 +7,7 @@ import urllib.request
 
 strQ="select count(*) from pictures"
 strCount=db.returnFetchall(strQ)[0]
-
+print(strCount)
 if strCount=="0":
     strCount=1
 else:
