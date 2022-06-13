@@ -5,6 +5,18 @@ import dbConn as db
 
 import urllib.request
 
+def QueryURL(url):
+    try:
+        page = urllib.request.urlopen(url)
+        btext=page.read()
+        print(btext)
+    except Exception as ex:
+        print(f"Error: {ex}")
+        strCount=str(int(strCount)+1)
+        url="https://http.cat/" + str(strCount)
+        QueryURL(url)
+
+
 strQ="select count(*) from pictures"
 strCount=str(db.returnFetchall(strQ)[0]).split(",")[0].replace("(","")
 print(strCount)
@@ -15,6 +27,6 @@ else:
 
 url="https://http.cat/" + str(strCount)
 print(f"Probing url:{url}")
-page = urllib.request.urlopen(url)
-btext=page.read()
-print(btext)
+QueryURL(url)
+
+
