@@ -6,7 +6,7 @@ import dbConn as db
 import urllib.request
 
 strQ="select count(*) from pictures"
-strCount=str(db.returnFetchall(strQ)[0]).split(",")[0]
+strCount=str(db.returnFetchall(strQ)[0]).split(",")[0].replace("(","")
 print(strCount)
 if strCount=="0":
     strCount=1
