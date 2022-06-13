@@ -9,7 +9,7 @@ def QueryURL(url,strCount="1"):
     try:
         print(f"Probing url:{url}")
         #page = urllib.request.urlopen(url)
-        page = urllib.urlretrieve(url)
+        page = urllib.urlretrieve(url, strCount)
         print("Page retrieved")
         btext=page.read()
         print("Page read")
