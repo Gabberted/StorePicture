@@ -5,8 +5,7 @@ import dbConn as db
 
 import urllib.request
 
-def QueryURL(url):
-    strCount="1"
+def QueryURL(url,strCount="1"):    
     try:
         print(f"Probing url:{url}")
         page = urllib.request.urlopen(url)
@@ -16,7 +15,7 @@ def QueryURL(url):
         print(f"Error: {ex}")
         strCount=str(int(strCount)+1)
         url="https://http.cat/" + str(strCount)
-        QueryURL(url)
+        QueryURL(url, strCount)
 
 
 strQ="select count(*) from pictures"
